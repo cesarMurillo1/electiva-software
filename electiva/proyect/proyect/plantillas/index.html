@@ -1,7 +1,6 @@
 {%load static%}
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,6 +19,9 @@
 
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <!--Awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 {% if request.user.is_authenticated %}
@@ -56,9 +58,8 @@
                                 </div>
                             </div>
                             <div>
-                                <p>HOLA</p>
-                                <span class="{{ object.get_platform_tags }}"></span>
-                                <link rel="shortcut icon" type="image/x-icon" href="{% static 'core/img/favicon.ico' %}">
+                                <p>Mensajes</p>
+                                <i class="fa-sharp fa-solid fa-mailbox"></i>
                             </div>
                             {% endblock body %}
               </section>
