@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/jaxxs/Desktop/electiva/proyect/proyect/plantillas'],
+        'DIRS': ['C:/Users/Maria Jose Ospina/Documents/GitHub/electiva-software/electiva/proyect/proyect/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE':  'django.db.backends.postgresql_psycopg2',
         'NAME': 'Gestion',
         'USER':'postgres',
-        'PASSWORD':'12345678',
+        'PASSWORD':'nalita201',
         'HOST':'127.0.0.1',
         'DATABASE_PORT':'5432'
     }
