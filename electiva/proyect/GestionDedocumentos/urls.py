@@ -10,4 +10,6 @@ urlpatterns=[
 	path('login/', LoginView.as_view(template_name='gestion/login.html'), name='login'),
 	path('logout/', LogoutView.as_view(template_name='gestion/logout.html'), name='logout'),
     path('profile/',profile,name='profile'),
+    path('profileAdmin/',profileAdmin,name='profileAdmin'),
+    
 ]
