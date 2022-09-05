@@ -28,3 +28,7 @@ def register(request):
 def profile(request):
     current_user = get_object_or_404(User, pk=request.user.pk)
     return render(request, 'gestion/profile.html',{'usuario':current_user})
+
+def profileAdmin(request):
+    current_user = get_object_or_404(User, pk=request.user.pk)
+    return render(request, 'gestion/profileAdmin.html',{'usuario':current_user})
