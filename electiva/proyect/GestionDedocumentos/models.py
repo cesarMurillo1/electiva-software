@@ -29,8 +29,8 @@ class enviar(models.Model):
     destinatario = models.CharField(max_length=100, null=False)
     emisario = models.CharField(max_length=100, null=False)
     fecha = models.DateTimeField(default=timezone.now, null=False)
-    mensaje = models.CharField(max_length=200)
-    etiqueta = models.CharField(max_length=200, null=False)
+    mensaje = models.TextField(max_length=1000)
+    etiqueta = models.CharField(max_length=50, null=False)
     
 #MODEL DE LA COLECCIÓN DE DOCUMENTOS
 class coleccion(models.Model): 
@@ -42,6 +42,6 @@ class reporte(models.Model):
     idReporte = models.CharField(primary_key=True, max_length=30, null=False)
     idColec = models.CharField(max_length=30, null=False)
     idEnvio = models.CharField(max_length=30, null=False)
-    descripcion = models.TextField(max_length=10000, null=False)  
+    descripcion = models.TextField(max_length=1000, null=False)  
     
 #RECUERDEN CAMBIAR LA CONTRASEÑA DEL POSTGRES POR LA SUYA
