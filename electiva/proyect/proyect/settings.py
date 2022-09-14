@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/jaxxs/Desktop/electiva/proyect/proyect/plantillas'],
+        'DIRS': ['C:/Users/jaxxs/Documents/GitHub/electiva-software/electiva/proyect/proyect/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,8 +124,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
-
-STATICFILES_DIRS=["C:/Users/jaxxs/Desktop/electiva/proyect/proyect/static",]
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "proyect/static"),
+)
+AUTH_USER_MODEL='app.usuario'
+LOGIN_URL = 'login'
