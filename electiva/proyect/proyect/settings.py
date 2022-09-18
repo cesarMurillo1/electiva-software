@@ -10,10 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import os
+from pathlib import Path
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -57,7 +57,11 @@ TEMPLATES = [
     {
         
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': ['C:/Users/jaxxs/Documents/GitHub/electiva-software/electiva/proyect/proyect/plantillas'],
+=======
+        'DIRS': ['C:/Users/Maria Jose Ospina/Documents/GitHub/electiva-software/electiva/proyect/proyect/plantillas'],
+>>>>>>> 62aa3cbe7cd2e67765f01aeb56861fb04b378f61
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +85,7 @@ DATABASES = {
         'ENGINE':  'django.db.backends.postgresql_psycopg2',
         'NAME': 'Gestion',
         'USER':'postgres',
-        'PASSWORD':'12345678',
+        'PASSWORD':'nalita201',
         'HOST':'127.0.0.1',
         'DATABASE_PORT':'5432'
     }

@@ -1,12 +1,25 @@
 {%load static%}
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'styleLES.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesL.css' %}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
+
+    <!-- Ionic icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <!--Awesome icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -40,7 +53,7 @@
                                 <div class="card-body">
                                     <blockquote class="blockquote mb-0 text-light text-center">
                                         <h1 class="text-light">Gestion Documental</h1>
-                                        <h1 class="text-light"> Bienvenido estudiante {{ user.username | upper }}</h1>
+                                        <h1 class="text-light"> Bienvenido Administrador {{ user.username | upper }}</h1>
                                     </blockquote>
                                 </div>
                             </div>
@@ -52,11 +65,6 @@
               </section>
 
 
-<<<<<<< HEAD
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   
-=======
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -97,12 +105,29 @@
                 }
             });
             </script>
->>>>>>> 62aa3cbe7cd2e67765f01aeb56861fb04b378f61
   
 </body>
 {% else %}
 <body>
-  
+  <style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #BBD2C5;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, rgba(15, 43, 196, 0.61), rgba(142, 190, 218, 0.658), rgba(55, 172, 208, 0.404));
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, rgba(15, 43, 196, 0.61), rgba(142, 190, 218, 0.658), rgba(55, 172, 208, 0.404)),url("https://www.wallpapertip.com/wmimgs/24-247446_aesthetic-glitter.jpg");
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+		}
+</style>
     
     <div class="wrapper fadeInDown">
         <div id="formContent">
