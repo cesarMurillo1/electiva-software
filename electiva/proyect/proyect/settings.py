@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'GestionDedocumentos',
+    
+    ''
 
 ]
 
@@ -57,11 +59,7 @@ TEMPLATES = [
     {
         
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
         'DIRS': ['C:/Users/jaxxs/Documents/GitHub/electiva-software/electiva/proyect/proyect/plantillas'],
-=======
-        'DIRS': ['C:/Users/Maria Jose Ospina/Documents/GitHub/electiva-software/electiva/proyect/proyect/plantillas'],
->>>>>>> 62aa3cbe7cd2e67765f01aeb56861fb04b378f61
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,8 +129,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "proyect/static"),
-)
-AUTH_USER_MODEL='app.usuario'
+
+AUTH_USER_MODEL='GestionDedocumentos.usuario'
 LOGIN_URL = 'login'
