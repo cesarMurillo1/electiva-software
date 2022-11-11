@@ -1,0 +1,110 @@
+import tkinter
+from tkinter import *
+from tkinter import ttk, messagebox
+import tkinter as tk
+
+def ordenar_2(msj):
+    lista = msj.split(sep='\r\n')
+    lista_final = []
+    for x in lista:
+        lista_final.append(x)
+    return lista_final
+
+def to_matriz(msj):
+    mat = []
+    for x in msj:
+        fila = x.split(sep=' ')
+        mat.append(fila)
+    return mat
+
+def to_float(msj):
+    mat = []
+    aux = []
+    for x in msj:
+        for y in x:
+            aux.append(float(y))
+        mat.append(aux.copy())
+        aux.clear()
+    return mat
+
+
+def saberDeCuantoPorCuantoEs(matriz):
+    aux = 0
+    filas = len(matriz)
+    for i in range(0, len(matriz)):
+        if aux < len(matriz[i]):
+            aux = len(matriz[i])
+
+    return aux, filas
+
+
+def rellenarLosEspacios(matriz):
+    numerosFaltan, filas = saberDeCuantoPorCuantoEs(matriz)
+    for i in range(0, len(matriz)):
+        if numerosFaltan > len(matriz[i]):
+            matriz[i].append(0)
+    return matriz
+
+
+
+def ordenar_arreglo(msj):
+    lista = msj.split(sep=',')
+    lista_final = []
+    for x in lista:
+        lista_final.append(float(x))
+    return lista_final
+
+def solucionar_ecuacion_lineal(mat, b):
+    a = np.array(mat)
+    v_sol = np.array(b)
+    x = np.linalg.solve(a, v_sol)
+    final = retornar_impresion_ecu_lineal(x)
+    return final
+
+def retornar_impresion_ecu_lineal(arreglo):
+    msj = []
+    for x in range(len(arreglo)):
+        msj.append('x' + str(x + 1) + ' = ' + str(arreglo[x]))
+    return msj
+
+def resolver_ecu_lineales(vectorSolucion,matriz):
+    m = ordenar_2(matriz)
+    a = to_matriz(m)
+    t = to_float(a)
+    mat = rellenarLosEspacios(t)
+    b = ordenar_arreglo(vectorSolucion)
+    x = solucionar_ecuacion_lineal(mat, b)
+    return x
+
+
+#interfaz
+cuadro = Tk()
+cuadro.title("Calculadora conversión de matrices")
+cuadro.geometry("1050x740")
+# Labels nombres
+metodo = Label(cuadro, text="SISTEMA DE ECUCIONES LINEALES", width="45", font=("helvetica", 12, "bold"),padx=5, pady=5, bg="LightSkyBlue1", fg="black", borderwidth=2, relief="groove")
+metodo.place(x=15, y=12)
+
+matriz = Label(cuadro, text="matriz", width="17", font=("helvetica", 12, "bold"),padx=5, pady=5, bg="ivory2", fg="black", borderwidth=2, relief="groove")
+matriz.place(x=15, y=48)
+
+vector = Label(cuadro, text="vector", width="17", font=("helvetica", 12, "bold"),padx=5, pady=5, bg="ivory2", fg="black", borderwidth=2, relief="groove")
+vector.place(x=15, y=80)
+
+#label resultados 
+resultados= Label(root, text="resultados", width="17", font=("helvetica", 12, "bold"),
+                     padx=5, pady=5, bg="ivory2", fg="black", borderwidth=2, relief="groove")
+raizLabel.place(x=15, y=270)
+
+
+
+
+#espacios de entradas 
+matrizV = tkinter.StringVar()
+vectorV = tkinter.StringVar()
+
+MatrizEntrada = Entry(cuadro, textvariable=matrizV, font=10, width=30)
+MatrizEntrada.place(x=222, y=53)
+
+vectorEntrada = Entry(cuadro, textvariable=vectorV, font=10, width=30)
+vectorEntrada.place(x=220, y=85)
