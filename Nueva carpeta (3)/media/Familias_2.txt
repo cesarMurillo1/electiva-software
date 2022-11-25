@@ -1,0 +1,88 @@
+-Natalia Abril Gutierrez (64301)
+
+CREATE OR REPLACE TYPE family_Group IS TABLE OF VARCHAR2(100);
+/
+
+DECLARE 
+workers family_Group:= family_Group();
+family family_Group:= family_Group();
+spouse family_Group:= family_Group();
+sons family_Group:= family_Group();
+
+
+
+BEGIN
+-Family 
+family.EXTEND(20);
+family(1):= 'Joy';
+family(2):= 'Nabil;
+family(3):= 'Ahmad';
+family(4):= 'Amelia';
+family(5):= 'Ahmad';
+family(6):= 'Janine';
+family(7):= 'Frank';
+family(8):= 'Jack';
+family(9):= 'Rakesh';
+family(10):= 'Elizabeth';
+family(10):= 'Melinda';
+family(11):= 'Theodore';
+family(12):= 'Jennifer';
+family(13):= 'Susan';
+family(14):= 'Andrew';
+family(15):= 'Alice';
+family(16):= 'John';
+family(17):= 'Alice';
+family(18):= 'Joanne';
+family(19):= 'Joyce';
+family(20):= 'John';
+
+-spouse
+spouse.EXTEND;
+spouse (spouse.LAST):='Joy';
+spouse.EXTEND;
+spouse (spouse.LAST):='Elizabeth';
+
+-sons
+sons.EXTEND;
+sons (sons.LAST):='Alice';
+sons.EXTEND;
+sons (sons.LAST):='Theodore';
+sons.EXTEND;
+sons (sons.LAST):='Andrew';
+sons.EXTEND;
+sons (sons.LAST):='Jennifer';
+sons.EXTEND;
+sons (sons.LAST):='John';
+sons.EXTEND;
+sons (sons.LAST):='Alice';
+sons.EXTEND;
+sons (sons.LAST):='Joyce';
+sons.EXTEND;
+sons (hijos.LAST):='Nabil';
+
+workers:= (family MULTISET EXCEPT sons) MULTISET EXCEPT spouse;
+
+
+
+
+
+DBMS_OUTPUT.put_line('--------sons--------');
+FOR fila IN 1..sons.COUNT
+LOOP
+DBMS_OUTPUT.put_line(sons(fila));
+END LOOP;
+
+DBMS_OUTPUT.put_line('----------spouse----------');
+FOR fila IN 1..spouse.COUNT
+LOOP
+DBMS_OUTPUT.put_line(spouse(fila));
+END LOOP;
+
+DBMS_OUTPUT.put_line('-------workers--------');
+FOR fila IN 1 .. workers.count
+LOOP
+DBMS_OUTPUT.put_line(workers (fila));
+END LOOP;
+DBMS_OUTPUT.put_line('Tamaño de la Lista '|| familia.COUNT);
+END;
+/

@@ -1,0 +1,58 @@
+create table nombreDetabla(  
+  dato1 number(50) not null,
+  dato varchar2(50),  
+  dato2 varchar2(50),  
+  dato3 varchar2(50) not null,  
+  dato4 number(6),
+);
+
+insert into nombreDetabla(dato1,dato, dato2, dato3, dato4)
+values (1,'Jamundi','Santa Monica', 'cra 24', 25); 
+
+//Consultas
+
+//Funciones
+1) create oR replace function nombreFuncion(parametro1 string, parametro2 string)
+ return string is
+ begin
+  return parametro1 + '@' + parametro2+ '.com';
+ end;
+
+//Procedimientos
+Un procedimiento almacenado es un conjunto de instrucciones a las que se les da un nombre, se almacena en la base de datos activa. Permiten agrupar y organizar tareas repetitivas.
+Ventajas:
+- comparten la lógica de la aplicación con las otras aplicaciones, con lo cual el acceso y las modificaciones de los datos se hacen en un solo sitio.
+- permiten realizar todas las operaciones que los usuarios necesitan evitando que tengan acceso directo a las tablas.
+- reducen el tráfico de red; en vez de enviar muchas instrucciones, los usuarios realizan operaciones enviando una única instrucción, lo cual disminuye el número de solicitudes entre el cliente y el servidor.
+Un procedimiento almacenados puede hacer referencia a objetos que no existen al momento de crearlo. Los objetos deben existir cuando se ejecute el procedimiento almacenado.
+Desventajas:
+- Las instrucciones que podemos utilizar dentro de un procedimiento almacenado no están preparadas para implementar lógicas de negocios muy complejas.
+- Son difíciles de depurar.
+
+
+ create or replace procedure NOMBREPROCEDIMIENTO
+ as 
+ begin
+   INSTRUCCIONES
+ end;
+ /
+
+Con las siguientes instrucciones creamos un procedimiento almacenado llamado "pa_libros_aumentar10" que incrementa en un 10% el precio de todos los libros:
+
+ create procedure pa_libros_aumentar10
+  as
+  begin
+   update libros set precio=precio+precio*0.1;
+  end;
+ /
+
+Para ejecutar el procedimiento almacenado creado anteriormente tipeamos:
+
+ execute pa_libros_aumentar10;
+
+//vista
+Una vista es un objeto. Una vista es una alternativa para mostrar datos de varias tablas; es como una tabla virtual que almacena una consulta. Los datos accesibles a través de la vista no están almacenados en la base de datos, en la base de datos se guarda la definición de la vista y no el resultado de ella.
+
+CREATE view nombrevista as consulta;
+ 
+create materialized view nombrevista as consulta;

@@ -1,0 +1,29 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>principal</title>
+      <link rel="stylesheet" href="{% static 'css/stylesL.css' %}" >
+</head>
+<body>
+<div class="center">
+      <h1>Bienvenido a Doctytech</h1>
+      <form method="post">
+        <div class="txt_field">
+          <a  href="{% url 'inicio2' %}"class="botton2">Iniciar sesion usuario</a>
+           
+        </div>
+        <div class="txt_field">
+          <a  href="{% url 'loggin' %}"class="botton2">Iniciar sesion administrador</a>
+        </div>
+      </form>
+    </div>
+
+</body>
+<style>
+   
+</style>
+
+</html>
+

@@ -1,0 +1,43 @@
+{%load static%}
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/file.css' %}" >
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  </head>
+  {% if request.user.is_authenticated %}
+  
+  <body>
+    <nav>
+      <div class="logo">
+        Doctytech
+      </div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="{% url 'inicioUsuario' user.username %}">Home</a></li>
+        <li><a href="{% url 'informacion' user.username %}">informacion usuario</a></li>
+        <li><a href="{% url 'UsuariosDisponibles'  user.username %}">Usuarios disponibles (enviar)</a></li>
+        <li><a href="{% url 'usuariosMensajes'  user.username %}">mensajes recibidos</a></li>
+        <li><a href="{% url 'logout'  %}">cerrar usuario</a></li>
+      </ul>
+   </nav>
+   <br>
+   <br>
+   <br>
+   <br>
+  </body>
+  {% endif%}
+</html>
+

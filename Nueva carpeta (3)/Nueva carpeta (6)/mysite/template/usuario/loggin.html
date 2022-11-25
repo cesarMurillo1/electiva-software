@@ -1,0 +1,30 @@
+{%load static%}
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" href="{% static 'css/stylesL.css' %}" >
+</head>
+
+<body>
+
+<div class="center">
+	<h1>Login</h1>
+	<form method="POST" action="">
+		{% csrf_token %}
+	  <div class="txt_field">
+		{{ form.username }}
+		<span></span>	
+	  </div>
+
+	  <div class="txt_field">
+		{{ form.password }}
+		<span></span>
+	  </div>
+	  <input class="btn btn-dark" type="submit" value="ingresar">
+	</form>
+	{{ form.errors }}
+  </div>
+</body>
+
+
+
